@@ -56,9 +56,6 @@ public class Album {
         this.stock--;
     }
 
-    // Viola o S do solid, principio da single responsability
-    // Solução é criar uma classe para formatar o nome do album com apenas a responsabilidade de formatar o nome
-    // AlbumFormatName
     public String getFormattedName() {
         return String.format("%s - %s (%s)", this.getTitle(), this.getArtist(), this.getReleaseDate().getYear());
     }
