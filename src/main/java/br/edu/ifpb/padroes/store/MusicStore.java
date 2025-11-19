@@ -27,6 +27,8 @@ public class MusicStore {
     public List<Album> searchMusic(SearchType searchType, String searchTerm) {
         List<Album> results = new ArrayList<>();
 
+        //essa classe viola também o princípio de aberto-fechado, baseado que se criarmos um novo tipo
+        //de busca teriamos que mudar a implementação dela
         if (searchType.equals(SearchType.TITLE)) {
             for (Album album : inventory) {
                 if (album.getTitle().toLowerCase().contains(searchTerm.toLowerCase())) {
