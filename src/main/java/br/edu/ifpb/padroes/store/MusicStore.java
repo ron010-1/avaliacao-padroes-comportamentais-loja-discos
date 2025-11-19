@@ -56,15 +56,18 @@ public class MusicStore {
         return results;
     }
 
+    // Open closed principle -> princípio que foi quebrado por esse método
+    // solução sugerida é ter uma classe CalculatorDiscount genérico e um para cada um dos tipos do enum
     public double calculateDiscount(Album album, CustomerType customerType) {
         double discount = 0;
 
+        // dúvida quanto a implementação do if se deve ficar desse jeito ou não
         if (customerType.equals(CustomerType.VIP)) {
-            discount = album.getPrice() * 0.20;
+            discount = new CalculatorDiscountVip(album).calculateDiscount();
         } else if (customerType.equals(CustomerType.PREMIUM)) {
-            discount = album.getPrice() * 0.15;
+            discount = new CalculatorDiscountPremium(album).calculateDiscount();
         } else if (customerType.equals(CustomerType.REGULAR)) {
-            discount = album.getPrice() * 0.05;
+            discount = new CalculatorDiscountRegular(album).getTotalDiscount();
         }
 
         // Additional discounts
