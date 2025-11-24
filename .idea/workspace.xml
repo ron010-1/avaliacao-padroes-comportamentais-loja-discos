@@ -5,14 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dd8259e6-d5eb-4e86-aebb-ca00907b018f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/edu/ifpb/padroes/validators/AgeRestrictionValidator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/edu/ifpb/padroes/validators/CreditValidator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/edu/ifpb/padroes/validators/PurchaseValidationChain.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/edu/ifpb/padroes/validators/PurchaseValidator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/edu/ifpb/padroes/validators/StockValidator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/edu/ifpb/padroes/store/MusicStore.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/edu/ifpb/padroes/store/MusicStore.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/br/edu/ifpb/padroes/store/MusicStore.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/edu/ifpb/padroes/store/MusicStore.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/br/edu/ifpb/padroes/store/MusicStoreTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/br/edu/ifpb/padroes/store/MusicStoreTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,33 +35,36 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;JUnit.MusicStoreTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.MusicStoreTest.testPurchaseFailsDueToAgeRestriction.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.MusicStoreTest.testPurchaseFailsDueToInsufficientCredit.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.MusicStoreTest.testPurchaseFailsDueToOutOfStock.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.MusicStoreTest.testSuccessfulPurchase.executor&quot;: &quot;Run&quot;,
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;questao2&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/glope/avaliacao-padroes-comportamentais-loja-discos&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "JUnit.MusicStoreTest.executor": "Run",
+    "JUnit.MusicStoreTest.testPurchaseFailsDueToAgeRestriction.executor": "Run",
+    "JUnit.MusicStoreTest.testPurchaseFailsDueToInsufficientCredit.executor": "Run",
+    "JUnit.MusicStoreTest.testPurchaseFailsDueToOutOfStock.executor": "Run",
+    "JUnit.MusicStoreTest.testSearchForAlbumByArtistName.executor": "Run",
+    "JUnit.MusicStoreTest.testSearchForAlbumByTitle.executor": "Run",
+    "JUnit.MusicStoreTest.testSearchForAlbumByType.executor": "Run",
+    "JUnit.MusicStoreTest.testSuccessfulPurchase.executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "questao6",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/glope/avaliacao-padroes-comportamentais-loja-discos",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
-  <component name="RunManager" selected="JUnit.MusicStoreTest">
+}]]></component>
+  <component name="RunManager" selected="JUnit.MusicStoreTest.testSearchForAlbumByGenre">
     <configuration name="MusicStoreTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="atv-padroes-comportamentais-2025-2" />
       <extension name="coverage">
@@ -86,7 +83,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MusicStoreTest.testPurchaseFailsDueToAgeRestriction" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="MusicStoreTest.testSearchForAlbumByArtistName" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="atv-padroes-comportamentais-2025-2" />
       <extension name="coverage">
         <pattern>
@@ -96,13 +93,13 @@
       </extension>
       <option name="PACKAGE_NAME" value="br.edu.ifpb.padroes.store" />
       <option name="MAIN_CLASS_NAME" value="br.edu.ifpb.padroes.store.MusicStoreTest" />
-      <option name="METHOD_NAME" value="testPurchaseFailsDueToAgeRestriction" />
+      <option name="METHOD_NAME" value="testSearchForAlbumByArtistName" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MusicStoreTest.testPurchaseFailsDueToInsufficientCredit" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="MusicStoreTest.testSearchForAlbumByGenre" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="atv-padroes-comportamentais-2025-2" />
       <extension name="coverage">
         <pattern>
@@ -112,13 +109,13 @@
       </extension>
       <option name="PACKAGE_NAME" value="br.edu.ifpb.padroes.store" />
       <option name="MAIN_CLASS_NAME" value="br.edu.ifpb.padroes.store.MusicStoreTest" />
-      <option name="METHOD_NAME" value="testPurchaseFailsDueToInsufficientCredit" />
+      <option name="METHOD_NAME" value="testSearchForAlbumByGenre" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MusicStoreTest.testPurchaseFailsDueToOutOfStock" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="MusicStoreTest.testSearchForAlbumByTitle" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="atv-padroes-comportamentais-2025-2" />
       <extension name="coverage">
         <pattern>
@@ -128,13 +125,13 @@
       </extension>
       <option name="PACKAGE_NAME" value="br.edu.ifpb.padroes.store" />
       <option name="MAIN_CLASS_NAME" value="br.edu.ifpb.padroes.store.MusicStoreTest" />
-      <option name="METHOD_NAME" value="testPurchaseFailsDueToOutOfStock" />
+      <option name="METHOD_NAME" value="testSearchForAlbumByTitle" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MusicStoreTest.testSuccessfulPurchase" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="MusicStoreTest.testSearchForAlbumByType" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="atv-padroes-comportamentais-2025-2" />
       <extension name="coverage">
         <pattern>
@@ -144,7 +141,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="br.edu.ifpb.padroes.store" />
       <option name="MAIN_CLASS_NAME" value="br.edu.ifpb.padroes.store.MusicStoreTest" />
-      <option name="METHOD_NAME" value="testSuccessfulPurchase" />
+      <option name="METHOD_NAME" value="testSearchForAlbumByType" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -152,11 +149,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.MusicStoreTest.testSearchForAlbumByGenre" />
+        <item itemvalue="JUnit.MusicStoreTest.testSearchForAlbumByArtistName" />
+        <item itemvalue="JUnit.MusicStoreTest.testSearchForAlbumByType" />
+        <item itemvalue="JUnit.MusicStoreTest.testSearchForAlbumByTitle" />
         <item itemvalue="JUnit.MusicStoreTest" />
-        <item itemvalue="JUnit.MusicStoreTest.testPurchaseFailsDueToAgeRestriction" />
-        <item itemvalue="JUnit.MusicStoreTest.testPurchaseFailsDueToInsufficientCredit" />
-        <item itemvalue="JUnit.MusicStoreTest.testPurchaseFailsDueToOutOfStock" />
-        <item itemvalue="JUnit.MusicStoreTest.testSuccessfulPurchase" />
       </list>
     </recent_temporary>
   </component>
@@ -178,6 +175,7 @@
       <workItem from="1763576980105" duration="853000" />
       <workItem from="1763581577804" duration="979000" />
       <workItem from="1763582992415" duration="571000" />
+      <workItem from="1764007951030" duration="2229000" />
     </task>
     <servers />
   </component>
