@@ -84,23 +84,19 @@ public class MusicStore {
             double discount = calculateDiscount(album, customer.getType());
             double finalPrice = album.getPrice() - discount;
 
-            System.out.println("Purchase: " + album.getFormattedName() + " by " + customer.getName());
-            System.out.println("Original price: $" + album.getPrice());
-            System.out.println("Discount: $" + discount);
-            System.out.println("Final price: $" + finalPrice);
+            PurchaseNote purchaseNote = new PurchaseNote(album,customer, discount, finalPrice);
+            purchaseNote.generateNote();
 
             album.decreaseStock();
             customer.addPurchase(album);
 
-            for (Customer c : customers) {
-                if (c.isInterestedIn(album.getGenre()) && !c.equals(customer)) {
-                    System.out.println("Notifying " + c.getName() + " about popular " + album.getGenre() + " purchase");
-                }
-            }
+            NotifyInterested notifyInterested = new NotifyInterested(customers, album, customer);
+            notifyInterested.notifyAllInterestedCustomers();
         } else {
             System.out.println("Out of stock!");
         }
     }
+
 
     public boolean validatePurchase(Customer customer, Album album) {
         // Check stock
