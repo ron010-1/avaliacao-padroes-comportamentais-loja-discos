@@ -188,6 +188,7 @@ class ArtistSearchStrategy implements SearchStrategy {
     public boolean matches(Album album, String searchTerm) {
         return album.getArtist().toLowerCase().contains(searchTerm.toLowerCase());
     }
+}
 // Strategy por Gênero
 class GenreSearchStrategy implements SearchStrategy {
     @Override
