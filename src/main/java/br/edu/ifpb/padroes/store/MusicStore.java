@@ -5,6 +5,8 @@ import br.edu.ifpb.padroes.customer.CustomerType;
 import br.edu.ifpb.padroes.music.AgeRestriction;
 import br.edu.ifpb.padroes.music.Album;
 import br.edu.ifpb.padroes.music.MediaType;
+import br.edu.ifpb.padroes.store.ArtistSearchStrategy.GenreSearchStrategy;
+import br.edu.ifpb.padroes.store.ArtistSearchStrategy.TypeSearchStrategy;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -25,35 +27,34 @@ public class MusicStore {
     }
 
     public List<Album> searchMusic(SearchType searchType, String searchTerm) {
+
         List<Album> results = new ArrayList<>();
+                SearchStrategy strategy;
 
-        if (searchType.equals(SearchType.TITLE)) {
-            for (Album album : inventory) {
-                if (album.getTitle().toLowerCase().contains(searchTerm.toLowerCase())) {
-                    results.add(album);
+                // Escolhe a estratégia baseada no Enum
+                switch (searchType) {
+                    case TITLE:
+                        strategy = new TitleSearchStrategy();
+                        break;
+                    case ARTIST:
+                        strategy = new ArtistSearchStrategy();
+                        break;
+                    case GENRE:
+                        strategy = new GenreSearchStrategy();
+                        break;
+                    case TYPE:
+                        strategy = new TypeSearchStrategy();
+                        break;
+                    default:
+                        return results; 
                 }
-            }
-        } else if (searchType.equals(SearchType.ARTIST)) {
-            for (Album album : inventory) {
-                if (album.getArtist().toLowerCase().contains(searchTerm.toLowerCase())) {
-                    results.add(album);
-                }
-            }
-        } else if (searchType.equals(SearchType.GENRE)) {
-            for (Album album : inventory) {
-                if (album.getGenre().toLowerCase().contains(searchTerm.toLowerCase())) {
-                    results.add(album);
-                }
-            }
-        } else if (searchType.equals(SearchType.TYPE)) {
-            for (Album album : inventory) {
-                if (album.getType().name().equalsIgnoreCase(searchTerm)) {
-                    results.add(album);
-                }
-            }
-        }
 
-        return results;
+                for (Album album : inventory) {
+                    if (strategy.matches(album, searchTerm)) {
+                        results.add(album);
+                    }
+                }
+                return results;
     }
 
     public double calculateDiscount(Album album, CustomerType customerType) {
@@ -165,5 +166,40 @@ class RegularDiscountStrategy implements DiscountStrategy {
     @Override
     public double calculate(Album album) {
         return album.getPrice() * 0.05;
+    }
+}
+
+//Refatoração com Strategy para Questão 5
+interface SearchStrategy {
+    boolean matches(Album album, String searchTerm);
+}
+
+// Strategy por Título
+class TitleSearchStrategy implements SearchStrategy {
+    @Override
+    public boolean matches(Album album, String searchTerm) {
+        return album.getTitle().toLowerCase().contains(searchTerm.toLowerCase());
+    }
+}
+
+// Strategy por Artista
+class ArtistSearchStrategy implements SearchStrategy {
+    @Override
+    public boolean matches(Album album, String searchTerm) {
+        return album.getArtist().toLowerCase().contains(searchTerm.toLowerCase());
+    }
+// Strategy por Gênero
+class GenreSearchStrategy implements SearchStrategy {
+    @Override
+    public boolean matches(Album album, String searchTerm) {
+        return album.getGenre().toLowerCase().contains(searchTerm.toLowerCase());
+    }
+}
+
+// Strategy por Tipo (CD, Vinil, etc)
+class TypeSearchStrategy implements SearchStrategy {
+    @Override
+    public boolean matches(Album album, String searchTerm) {
+        return album.getType().name().equalsIgnoreCase(searchTerm);
     }
 }
