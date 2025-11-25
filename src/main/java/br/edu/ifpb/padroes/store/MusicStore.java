@@ -57,23 +57,27 @@ public class MusicStore {
     }
 
     public double calculateDiscount(Album album, CustomerType customerType) {
-        double discount = 0;
 
-        if (customerType.equals(CustomerType.VIP)) {
-            discount = album.getPrice() * 0.20;
-        } else if (customerType.equals(CustomerType.PREMIUM)) {
-            discount = album.getPrice() * 0.15;
-        } else if (customerType.equals(CustomerType.REGULAR)) {
-            discount = album.getPrice() * 0.05;
+        // 1. Define qual estratégia usar
+        DiscountStrategy strategy;
+        switch (customerType) {
+            case VIP:
+                strategy = new VipDiscountStrategy();
+                break;
+            case PREMIUM:
+                strategy = new PremiumDiscountStrategy();
+                break;
+            default:
+                strategy = new RegularDiscountStrategy();
+                break;
         }
 
-        // Additional discounts
+        // 2. Calcula o desconto base da estratégia escolhida
+        double discount = strategy.calculate(album);
+
+        // 3. Aplica regra global da loja (Vinil Antigo) - independente do cliente
         if (album.getType().equals(MediaType.VINYL) && album.getReleaseDate().getYear() < 1980) {
             discount += album.getPrice() * 0.10;
-        }
-
-        if (album.getGenre().equalsIgnoreCase("Pop Punk") && customerType.equals(CustomerType.VIP)) {
-            discount += album.getPrice() * 0.05;
         }
 
         return discount;
@@ -128,4 +132,38 @@ public class MusicStore {
         return inventory;
     }
 
+}
+
+//Refatoração com Strategy para Questão 3
+// 1. Interface
+interface DiscountStrategy {
+    double calculate(Album album);
+}
+
+// 2. Strategy para VIP (20% + 5% se for Pop Punk)
+class VipDiscountStrategy implements DiscountStrategy {
+    @Override
+    public double calculate(Album album) {
+        double discount = album.getPrice() * 0.20;
+        if (album.getGenre().equalsIgnoreCase("Pop Punk")) {
+            discount += album.getPrice() * 0.05;
+        }
+        return discount;
+    }
+}
+
+// 3. Strategy para Premium (15%)
+class PremiumDiscountStrategy implements DiscountStrategy {
+    @Override
+    public double calculate(Album album) {
+        return album.getPrice() * 0.15;
+    }
+}
+
+// 4. Strategy para Regular (5%)
+class RegularDiscountStrategy implements DiscountStrategy {
+    @Override
+    public double calculate(Album album) {
+        return album.getPrice() * 0.05;
+    }
 }
