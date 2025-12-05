@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dd8259e6-d5eb-4e86-aebb-ca00907b018f" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/br/edu/ifpb/padroes/store/MusicStoreTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/br/edu/ifpb/padroes/store/MusicStoreTest.java" afterDir="false" />
-    </list>
+    <list default="true" id="dd8259e6-d5eb-4e86-aebb-ca00907b018f" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -52,7 +49,7 @@
     "git-widget-placeholder": "questao6",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/glope/avaliacao-padroes-comportamentais-loja-discos",
+    "last_opened_file_path": "C:/Users/gugalps/avaliacao-padroes-comportamentais-loja-discos",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -160,11 +157,12 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9823dce3aa75-bf35d07a577b-intellij.indexing.shared.core-IU-252.26830.84" />
-        <option value="bundled-js-predefined-d6986cc7102b-3aa1da707db6-JavaScript-IU-252.26830.84" />
+        <option value="bundled-jdk-9823dce3aa75-28b599e66164-intellij.indexing.shared.core-IU-242.23726.103" />
+        <option value="bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-IU-242.23726.103" />
       </set>
     </attachedChunks>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="dd8259e6-d5eb-4e86-aebb-ca00907b018f" name="Changes" comment="" />
@@ -176,6 +174,7 @@
       <workItem from="1763581577804" duration="979000" />
       <workItem from="1763582992415" duration="571000" />
       <workItem from="1764007951030" duration="2229000" />
+      <workItem from="1764942804570" duration="394000" />
     </task>
     <servers />
   </component>
