@@ -12,6 +12,7 @@ import org.junit.jupiter.api.Test;
 import java.time.LocalDate;
 import java.time.Month;
 import java.util.ArrayList;
+import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -123,6 +124,85 @@ public class MusicStoreTest {
         assertEquals(3, album.getStock(), "Stock should decrease by 1 after successful purchase");
         assertEquals(expectedDiscount, store.calculateDiscount(album, customer.getType()), 0.01, "Discount should match the calculated discount");
         assertTrue(customer.getPurchases().contains(album), "Album should be added to customer's purchases");
+    }
+
+    @Test
+    @DisplayName("Should be possible to search for an album by title")
+    void testSearchForAlbumByTitle() {
+        MusicStore store = new MusicStore();
+        Customer customer = new Customer("Premium Carl", new ArrayList<>(), new ArrayList<>(), 120.00, CustomerType.PREMIUM, LocalDate.of(1970, 7, 10));
+        Album album = new Album("Caos","Alee",MediaType.TAPE,333.33,LocalDate.of(2024,06,06),AgeRestriction.GENERAL,"Rap",50);
+
+        store.addMusic(album);
+        store.addCustomer(customer);
+
+        store.searchMusic(SearchType.TITLE, "Caos");
+
+        List<Album> results = store.searchMusic(SearchType.TITLE, "Caos");
+
+        assertEquals(1, results.size(), "It should return exactly one album");
+        assertEquals("Caos", results.getFirst().getTitle(), "The returned title should be Caos");
+        assertFalse(results.isEmpty(), "The search should return results");
+    }
+
+    @Test
+    @DisplayName("Should be possible to search for an album by title")
+    void testSearchForAlbumByType(){
+        MusicStore store = new MusicStore();
+        Customer customer = new Customer("Premium Carl", new ArrayList<>(), new ArrayList<>(), 120.00, CustomerType.PREMIUM, LocalDate.of(1970, 7, 10));
+        Album album = new Album("Caos","Alee",MediaType.TAPE,333.33,LocalDate.of(2024,06,06),AgeRestriction.GENERAL,"Rap",50);
+
+        store.addMusic(album);
+        store.addCustomer(customer);
+
+        store.searchMusic(SearchType.TYPE,MediaType.TAPE.name());
+
+        List<Album> results = store.searchMusic(SearchType.TYPE, MediaType.TAPE.name());
+
+        assertEquals(1, results.size(), "It should return exactly one album");
+        assertEquals(MediaType.TAPE, results.getFirst().getType(), "The album type should be TAPE");
+        assertFalse(results.isEmpty(), "The search should return at least one album");
+
+    }
+
+    @Test
+    @DisplayName("Should be possible to search for an album by title")
+    void testSearchForAlbumByArtistName(){
+        MusicStore store = new MusicStore();
+        Customer customer = new Customer("Premium Carl", new ArrayList<>(), new ArrayList<>(), 120.00, CustomerType.PREMIUM, LocalDate.of(1970, 7, 10));
+        Album album = new Album("Caos","Alee",MediaType.TAPE,333.33,LocalDate.of(2024,06,06),AgeRestriction.GENERAL,"Rap",50);
+
+        store.addMusic(album);
+        store.addCustomer(customer);
+
+        store.searchMusic(SearchType.ARTIST,"Alee");
+
+        List<Album> results = store.searchMusic(SearchType.ARTIST, "Alee");
+
+        assertEquals(1, results.size(), "It should return exactly one album");
+        assertEquals("Alee", results.getFirst().getArtist(), "The returned artist name should be Alee");
+        assertFalse(results.isEmpty(), "The search should return results");
+
+    }
+
+    @Test
+    @DisplayName("Should be possible to search for an album by title")
+    void testSearchForAlbumByGenre(){
+        MusicStore store = new MusicStore();
+        Customer customer = new Customer("Premium Carl", new ArrayList<>(), new ArrayList<>(), 120.00, CustomerType.PREMIUM, LocalDate.of(1970, 7, 10));
+        Album album = new Album("Dias antes do Caos","Alee",MediaType.TAPE,333.33,LocalDate.of(2024,06,06),AgeRestriction.GENERAL,"Rap",50);
+
+        store.addMusic(album);
+        store.addCustomer(customer);
+
+        store.searchMusic(SearchType.GENRE,"Rap");
+
+        List<Album> results = store.searchMusic(SearchType.GENRE, "Rap");
+
+        assertEquals(1, results.size(), "It should return exactly one album");
+        assertEquals("Rap", results.getFirst().getGenre(), "The returned artist name should be Rap");
+        assertFalse(results.isEmpty(), "The search should return results");
+
     }
 
 }
