@@ -146,7 +146,7 @@ public class MusicStoreTest {
     }
 
     @Test
-    @DisplayName("Should be possible to search for an album by title")
+    @DisplayName("Should be possible to search for an album by type")
     void testSearchForAlbumByType(){
         MusicStore store = new MusicStore();
         Customer customer = new Customer("Premium Carl", new ArrayList<>(), new ArrayList<>(), 120.00, CustomerType.PREMIUM, LocalDate.of(1970, 7, 10));
@@ -166,7 +166,7 @@ public class MusicStoreTest {
     }
 
     @Test
-    @DisplayName("Should be possible to search for an album by title")
+    @DisplayName("Should be possible to search for an album by artist")
     void testSearchForAlbumByArtistName(){
         MusicStore store = new MusicStore();
         Customer customer = new Customer("Premium Carl", new ArrayList<>(), new ArrayList<>(), 120.00, CustomerType.PREMIUM, LocalDate.of(1970, 7, 10));
@@ -186,7 +186,7 @@ public class MusicStoreTest {
     }
 
     @Test
-    @DisplayName("Should be possible to search for an album by title")
+    @DisplayName("Should be possible to search for an album by gender")
     void testSearchForAlbumByGenre(){
         MusicStore store = new MusicStore();
         Customer customer = new Customer("Premium Carl", new ArrayList<>(), new ArrayList<>(), 120.00, CustomerType.PREMIUM, LocalDate.of(1970, 7, 10));
