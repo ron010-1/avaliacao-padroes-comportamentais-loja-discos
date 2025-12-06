@@ -6,7 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="dd8259e6-d5eb-4e86-aebb-ca00907b018f" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/edu/ifpb/padroes/store/MusicStore.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/edu/ifpb/padroes/store/MusicStore.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/br/edu/ifpb/padroes/store/MusicStoreTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/br/edu/ifpb/padroes/store/MusicStoreTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,6 +37,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "JUnit.MusicStoreTest.executor": "Run",
+    "JUnit.MusicStoreTest.testSearchForAlbumByArtistName.executor": "Run",
     "JUnit.MusicStoreTest.testSearchForAlbumByTitle.executor": "Run",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
@@ -55,7 +56,7 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RunManager" selected="JUnit.MusicStoreTest.testSearchForAlbumByTitle">
+  <component name="RunManager" selected="JUnit.MusicStoreTest.testSearchForAlbumByArtistName">
     <configuration name="MusicStoreTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="atv-padroes-comportamentais-2025-2" />
       <extension name="coverage">
@@ -70,6 +71,22 @@
       <option name="MAIN_CLASS_NAME" value="br.edu.ifpb.padroes.store.MusicStoreTest" />
       <option name="METHOD_NAME" value="" />
       <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MusicStoreTest.testSearchForAlbumByArtistName" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="atv-padroes-comportamentais-2025-2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="br.edu.ifpb.padroes.store.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="br.edu.ifpb.padroes.store" />
+      <option name="MAIN_CLASS_NAME" value="br.edu.ifpb.padroes.store.MusicStoreTest" />
+      <option name="METHOD_NAME" value="testSearchForAlbumByArtistName" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -92,16 +109,17 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.MusicStoreTest.testSearchForAlbumByTitle" />
+        <item itemvalue="JUnit.MusicStoreTest.testSearchForAlbumByArtistName" />
         <item itemvalue="JUnit.MusicStoreTest" />
+        <item itemvalue="JUnit.MusicStoreTest.testSearchForAlbumByTitle" />
       </list>
     </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9823dce3aa75-28b599e66164-intellij.indexing.shared.core-IU-242.23726.103" />
-        <option value="bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-IU-242.23726.103" />
+        <option value="bundled-jdk-9823dce3aa75-bf35d07a577b-intellij.indexing.shared.core-IU-252.26830.84" />
+        <option value="bundled-js-predefined-d6986cc7102b-3aa1da707db6-JavaScript-IU-252.26830.84" />
       </set>
     </attachedChunks>
   </component>
@@ -115,6 +133,7 @@
       <updated>1763564687440</updated>
       <workItem from="1764944272924" duration="212000" />
       <workItem from="1764944577585" duration="1316000" />
+      <workItem from="1765041491558" duration="398000" />
     </task>
     <servers />
   </component>

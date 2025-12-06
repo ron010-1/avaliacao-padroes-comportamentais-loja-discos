@@ -171,15 +171,17 @@ public class MusicStoreTest {
         MusicStore store = new MusicStore();
         Customer customer = new Customer("Premium Carl", new ArrayList<>(), new ArrayList<>(), 120.00, CustomerType.PREMIUM, LocalDate.of(1970, 7, 10));
         Album album = new Album("Caos","Alee",MediaType.TAPE,333.33,LocalDate.of(2024,06,06),AgeRestriction.GENERAL,"Rap",50);
+        Album album2 = new Album("Caos Deluxe","Alee",MediaType.TAPE,333.33,LocalDate.of(2024,06,06),AgeRestriction.GENERAL,"Rap",50);
 
         store.addMusic(album);
+        store.addMusic(album2);
         store.addCustomer(customer);
 
         store.searchMusic(SearchType.ARTIST,"Alee");
 
         List<Album> results = store.searchMusic(SearchType.ARTIST, "Alee");
 
-        assertEquals(1, results.size(), "It should return exactly one album");
+        assertEquals(2, results.size(), "It should return exactly one album");
         assertEquals("Alee", results.getFirst().getArtist(), "The returned artist name should be Alee");
         assertFalse(results.isEmpty(), "The search should return results");
 
