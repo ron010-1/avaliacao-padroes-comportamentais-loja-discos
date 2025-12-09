@@ -5,6 +5,7 @@ import br.edu.ifpb.padroes.customer.CustomerType;
 import br.edu.ifpb.padroes.music.AgeRestriction;
 import br.edu.ifpb.padroes.music.Album;
 import br.edu.ifpb.padroes.music.MediaType;
+import br.edu.ifpb.padroes.search.SearchType;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;

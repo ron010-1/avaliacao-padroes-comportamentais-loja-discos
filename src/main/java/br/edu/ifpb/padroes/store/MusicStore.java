@@ -2,14 +2,18 @@ package br.edu.ifpb.padroes.store;
 
 import br.edu.ifpb.padroes.customer.Customer;
 import br.edu.ifpb.padroes.customer.CustomerType;
+import br.edu.ifpb.padroes.discount.DiscountStrategy;
+import br.edu.ifpb.padroes.discount.PremiumDiscountStrategy;
+import br.edu.ifpb.padroes.discount.RegularDiscountStrategy;
+import br.edu.ifpb.padroes.discount.VipDiscountStrategy;
 import br.edu.ifpb.padroes.music.Album;
 import br.edu.ifpb.padroes.music.MediaType;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import br.edu.ifpb.padroes.search.*;
 import br.edu.ifpb.padroes.validators.PurchaseValidationChain;
-
-
 
 public class MusicStore {
 
@@ -30,7 +34,6 @@ public class MusicStore {
         List<Album> results = new ArrayList<>();
         SearchStrategy strategy;
 
-        // Escolhe a estratégia baseada no Enum
         switch (searchType) {
             case TITLE:
                 strategy = new TitleSearchStrategy();
@@ -58,7 +61,6 @@ public class MusicStore {
 
     public double calculateDiscount(Album album, CustomerType customerType) {
 
-        // 1. Define qual estratégia usar
         DiscountStrategy strategy;
         switch (customerType) {
             case VIP:
@@ -72,10 +74,8 @@ public class MusicStore {
                 break;
         }
 
-        // 2. Calcula o desconto base da estratégia escolhida
         double discount = strategy.calculate(album);
 
-        // 3. Aplica regra global da loja (Vinil Antigo) - independente do cliente
         if (album.getType().equals(MediaType.VINYL) && album.getReleaseDate().getYear() < 1980) {
             discount += album.getPrice() * 0.10;
         }
@@ -108,76 +108,5 @@ public class MusicStore {
 
     public List<Album> getInventory() {
         return inventory;
-    }
-
-}
-
-//Refatoração com Strategy para Questão 3
-// 1. Interface
-interface DiscountStrategy {
-    double calculate(Album album);
-}
-
-// 2. Strategy para VIP (20% + 5% se for Pop Punk)
-class VipDiscountStrategy implements DiscountStrategy {
-    @Override
-    public double calculate(Album album) {
-        double discount = album.getPrice() * 0.20;
-        if (album.getGenre().equalsIgnoreCase("Pop Punk")) {
-            discount += album.getPrice() * 0.05;
-        }
-        return discount;
-    }
-}
-
-// 3. Strategy para Premium (15%)
-class PremiumDiscountStrategy implements DiscountStrategy {
-    @Override
-    public double calculate(Album album) {
-        return album.getPrice() * 0.15;
-    }
-}
-
-// 4. Strategy para Regular (5%)
-class RegularDiscountStrategy implements DiscountStrategy {
-    @Override
-    public double calculate(Album album) {
-        return album.getPrice() * 0.05;
-    }
-}
-
-//Refatoração com Strategy para Questão 5
-interface SearchStrategy {
-    boolean matches(Album album, String searchTerm);
-}
-
-// Strategy por Título
-class TitleSearchStrategy implements SearchStrategy {
-    @Override
-    public boolean matches(Album album, String searchTerm) {
-        return album.getTitle().toLowerCase().contains(searchTerm.toLowerCase());
-    }
-}
-
-// Strategy por Artista
-class ArtistSearchStrategy implements SearchStrategy {
-    @Override
-    public boolean matches(Album album, String searchTerm) {
-        return album.getArtist().toLowerCase().contains(searchTerm.toLowerCase());
-    }
-}
-// Strategy por Gênero
-class GenreSearchStrategy implements SearchStrategy {
-    @Override
-    public boolean matches(Album album, String searchTerm) {
-        return album.getGenre().toLowerCase().contains(searchTerm.toLowerCase());
-    }
-}
-
-// Strategy por Tipo (CD, Vinil, etc)
-class TypeSearchStrategy implements SearchStrategy {
-    @Override
-    public boolean matches(Album album, String searchTerm) {
-        return album.getType().name().equalsIgnoreCase(searchTerm);
     }
 }
